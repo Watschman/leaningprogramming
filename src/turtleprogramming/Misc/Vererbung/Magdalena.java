@@ -1,4 +1,4 @@
-package turtleprogramming.Misc.Vererbung;
+package turtleprogramming.misc.vererbung;
 
 class Magdalena extends GreenTurtle{
     Magdalena(){
