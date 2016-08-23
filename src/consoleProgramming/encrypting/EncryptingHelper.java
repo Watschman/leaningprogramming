@@ -1,98 +1,93 @@
 package consoleProgramming.encrypting;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class EncryptingHelper {
     public static String encryptString(String string){
-        List<Character> OUTPUT= new ArrayList<Character>();
-        OUTPUT.clear();
-        char[] INPUT = string.toCharArray();
+        char[] INPUT = string.toLowerCase().toCharArray();
+        StringBuilder STRINGBUILDER = new StringBuilder(INPUT.length);
         for (char ONECHAR : INPUT){
             switch (ONECHAR){
                 case 'a':
-                    OUTPUT.add('c');
+                    STRINGBUILDER.append('c');
                     break;
                 case 'b':
-                    OUTPUT.add('d');
+                    STRINGBUILDER.append('d');
                     break;
                 case 'c':
-                    OUTPUT.add('e');
+                    STRINGBUILDER.append('e');
                     break;
                 case 'd':
-                    OUTPUT.add('f');
+                    STRINGBUILDER.append('f');
                     break;
                 case 'e':
-                    OUTPUT.add('g');
+                    STRINGBUILDER.append('g');
                     break;
                 case 'f':
-                    OUTPUT.add('h');
+                    STRINGBUILDER.append('h');
                     break;
                 case 'g':
-                    OUTPUT.add('i');
+                    STRINGBUILDER.append('i');
                     break;
                 case 'h':
-                    OUTPUT.add('j');
+                    STRINGBUILDER.append('j');
                     break;
                 case 'i':
-                    OUTPUT.add('k');
+                    STRINGBUILDER.append('k');
                     break;
                 case 'j':
-                    OUTPUT.add('l');
+                    STRINGBUILDER.append('l');
                     break;
                 case 'k':
-                    OUTPUT.add('m');
+                    STRINGBUILDER.append('m');
                     break;
                 case 'l':
-                    OUTPUT.add('n');
+                    STRINGBUILDER.append('n');
                     break;
                 case 'm':
-                    OUTPUT.add('o');
+                    STRINGBUILDER.append('o');
                     break;
                 case 'n':
-                    OUTPUT.add('p');
+                    STRINGBUILDER.append('p');
                     break;
                 case 'o':
-                    OUTPUT.add('q');
+                    STRINGBUILDER.append('q');
                     break;
                 case 'p':
-                    OUTPUT.add('r');
+                    STRINGBUILDER.append('r');
                     break;
                 case 'q':
-                    OUTPUT.add('s');
+                    STRINGBUILDER.append('s');
                     break;
                 case 'r':
-                    OUTPUT.add('t');
+                    STRINGBUILDER.append('t');
                     break;
                 case 's':
-                    OUTPUT.add('u');
+                    STRINGBUILDER.append('u');
                     break;
                 case 't':
-                    OUTPUT.add('v');
+                    STRINGBUILDER.append('v');
                     break;
                 case 'u':
-                    OUTPUT.add('w');
+                    STRINGBUILDER.append('w');
                     break;
                 case 'v':
-                    OUTPUT.add('x');
+                    STRINGBUILDER.append('x');
                     break;
                 case 'w':
-                    OUTPUT.add('y');
+                    STRINGBUILDER.append('y');
                     break;
                 case 'x':
-                    OUTPUT.add('z');
+                    STRINGBUILDER.append('z');
                     break;
                 case 'y':
-                    OUTPUT.add('a');
+                    STRINGBUILDER.append('a');
                     break;
                 case 'z':
-                    OUTPUT.add('b');
+                    STRINGBUILDER.append('b');
                     break;
                 default:
-                    OUTPUT.add(ONECHAR);
+                    STRINGBUILDER.append(ONECHAR);
             }
         }
-        return Arrays.deepToString(OUTPUT.toArray()).replace(",", "").replace("[", "").replace("]", "").replace(" ", "");
+        return STRINGBUILDER.toString();
     }
 }

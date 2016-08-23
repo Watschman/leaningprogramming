@@ -1,5 +1,6 @@
 package consoleProgramming.encrypting;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CaesarEncryption{
@@ -7,8 +8,11 @@ public class CaesarEncryption{
     private Scanner SCANNER = new Scanner(System.in);
 
     private CaesarEncryption(){
+        writeToConsoleLn("Geben Sie das Wort ein das verschlüsselt werden soll");
         String ENCRYPTED_STRING = EncryptingHelper.encryptString(getInput());
+        writeToConsoleLn("Verschlüssele....");
         writeToConsoleLn(ENCRYPTED_STRING);
+        redo();
     }
     private String getInput(){
         try {
@@ -18,6 +22,17 @@ public class CaesarEncryption{
             e.printStackTrace();
         }
         return null;
+    }
+    private void redo(){
+        writeToConsoleLn("Möchten Sie ein neues Wort verschlüsseln? (Antworten mit true/false)");
+        try {
+            if (SCANNER.nextBoolean())
+                new CaesarEncryption();
+            else
+                writeToConsoleLn("Stoppe Programm...");
+        }catch (InputMismatchException e){
+            writeToConsoleLn("Ungültige Eingabe stoppe Programm...");
+        }
     }
     private void writeToConsoleLn(Object object){
         System.out.println(object);
