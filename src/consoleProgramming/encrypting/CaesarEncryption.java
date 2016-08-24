@@ -9,7 +9,7 @@ public class CaesarEncryption{
 
     private CaesarEncryption(){
         writeToConsoleLn("Geben Sie das Wort ein das verschlüsselt werden soll");
-        String ENCRYPTED_STRING = EncryptingHelper.encryptString(getInput());
+        String ENCRYPTED_STRING = EncryptingHelper.encrypt(getInput());
         writeToConsoleLn("Verschlüssele....");
         writeToConsoleLn(ENCRYPTED_STRING);
         redo();
