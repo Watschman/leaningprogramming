@@ -1,4 +1,4 @@
-package consoleProgramming;
+package consoleProgramming.calculating;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

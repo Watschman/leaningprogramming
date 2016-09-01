@@ -184,56 +184,71 @@ public class VigenerEncryption extends JPanel implements PropertyChangeListener{
     private static String encrypt(String wort, String code){
         ArrayList<Character> WORT_LIST = new ArrayList<Character>();
         ArrayList<Character> CODE_LIST = new ArrayList<Character>();
+        ArrayList<Character> BUFFER = new ArrayList<Character>();
         StringBuilder STRINGBUILDER = new StringBuilder();
         for (char ONE_CHAR : wort.toUpperCase().toCharArray()) {
             WORT_LIST.add(ONE_CHAR);
         }
         for (char ONE_CHAR : code.toUpperCase().toCharArray()) {
             CODE_LIST.add(ONE_CHAR);
+            BUFFER.add(ONE_CHAR);
         }
-        if(WORT_LIST.size() == CODE_LIST.size()){
-            for (int i = 0; i < WORT_LIST.size(); i++) {
-                try {
-                    int TO_ADD = (((int) WORT_LIST.get(i)) + ((int) CODE_LIST.get(i) - 65));
-                    if (TO_ADD > 90)
-                        STRINGBUILDER.append((char) (TO_ADD - 26));
-                    else
-                        STRINGBUILDER.append((char) TO_ADD);
-                } catch (Exception ex) {
-                    System.out.println("Irgendwas ist da falsch gelaufen bei der Eingabe!");
-                    return null;
-                }
+        int ADD_UP = 0;
+        while ( WORT_LIST.size() != CODE_LIST.size()){
+            CODE_LIST.add(BUFFER.get(ADD_UP));
+            if (ADD_UP+1 == BUFFER.size())
+                ADD_UP = 0;
+            else {
+                ADD_UP++;
             }
-            return STRINGBUILDER.toString();
-        }else
-            return "falsche Eingabe";
+        }
+        for (int i = 0; i < WORT_LIST.size(); i++) {
+            try {
+                int TO_ADD = (((int) WORT_LIST.get(i)) + ((int) CODE_LIST.get(i) - 65));
+                if (TO_ADD > 90)
+                    STRINGBUILDER.append((char) (TO_ADD - 26));
+                else
+                    STRINGBUILDER.append((char) TO_ADD);
+            } catch (Exception ex) {
+                System.out.println("Irgendwas ist da falsch gelaufen bei der Eingabe!");
+                return null;
+            }
+        }
+        return STRINGBUILDER.toString();
     }
     //Algorithmus zum Entschlüsseln
     private static String decrypt(String wort, String code){
         ArrayList<Character> WORT_LIST = new ArrayList<Character>();
         ArrayList<Character> CODE_LIST = new ArrayList<Character>();
+        ArrayList<Character> BUFFER = new ArrayList<Character>();
         StringBuilder STRINGBUILDER = new StringBuilder();
         for (char ONE_CHAR : wort.toUpperCase().toCharArray()) {
             WORT_LIST.add(ONE_CHAR);
         }
         for (char ONE_CHAR : code.toUpperCase().toCharArray()) {
             CODE_LIST.add(ONE_CHAR);
+            BUFFER.add(ONE_CHAR);
         }
-        if(WORT_LIST.size() == CODE_LIST.size()){
-            for (int i = 0; i < WORT_LIST.size(); i++) {
-                try {
-                    int TO_ADD = (((int) WORT_LIST.get(i)) - ((int) CODE_LIST.get(i) - 65));
-                    if (TO_ADD < 65)
-                        STRINGBUILDER.append((char) (TO_ADD + 26));
-                    else
-                        STRINGBUILDER.append((char) TO_ADD);
-                } catch (Exception ex) {
-                    System.out.println("Irgendwas ist da falsch gelaufen bei der Eingabe!");
-                    return null;
-                }
+        int ADD_UP = 0;
+        while ( WORT_LIST.size() != CODE_LIST.size()){
+            CODE_LIST.add(BUFFER.get(ADD_UP));
+            if (ADD_UP+1 == BUFFER.size())
+                ADD_UP = 0;
+            else
+                ADD_UP++;
+        }
+        for (int i = 0; i < WORT_LIST.size(); i++) {
+            try {
+                int TO_ADD = (((int) WORT_LIST.get(i)) - ((int) CODE_LIST.get(i) - 65));
+                if (TO_ADD < 65)
+                    STRINGBUILDER.append((char) (TO_ADD + 26));
+                else
+                    STRINGBUILDER.append((char) TO_ADD);
+            } catch (Exception ex) {
+                System.out.println("Irgendwas ist da falsch gelaufen bei der Eingabe!");
+                return null;
             }
-            return STRINGBUILDER.toString();
-        }else
-            return "falsche Eingabe";
+        }
+        return STRINGBUILDER.toString();
     }
 }
