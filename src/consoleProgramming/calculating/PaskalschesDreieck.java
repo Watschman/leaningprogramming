@@ -10,7 +10,6 @@ public class PaskalschesDreieck {
         onDreickCreate(AMOUNT+1);
         redo();
     }
-
     private void onDreickCreate(int amount){
         for (int i = 0; i < amount; i++) {
             StringBuilder STRINGBUILDER = new StringBuilder();
