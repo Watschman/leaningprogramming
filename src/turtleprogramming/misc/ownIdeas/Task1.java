@@ -1,8 +1,7 @@
-package turtleprogramming.misc.ownIdeas;
+package turtleProgramming.misc.ownIdeas;
 
 import ch.aplu.turtle.Turtle;
-import ch.aplu.turtle.TurtleFrame;
-import turtleprogramming.util.FigurHelper;
+import turtleProgramming.util.FigurHelper;
 
 import java.awt.*;
 

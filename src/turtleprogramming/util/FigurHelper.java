@@ -1,4 +1,4 @@
-package turtleprogramming.util;
+package turtleProgramming.util;
 
 import ch.aplu.turtle.Turtle;
 

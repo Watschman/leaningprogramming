@@ -1,7 +1,7 @@
-package turtleprogramming.serien.serie11;
+package turtleProgramming.serien.serie11;
 
 import ch.aplu.turtle.Turtle;
-import turtleprogramming.util.SoundHelper;
+import turtleProgramming.util.SoundHelper;
 
 import java.awt.*;
 import java.awt.geom.Point2D;

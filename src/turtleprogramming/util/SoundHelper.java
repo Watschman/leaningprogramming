@@ -1,4 +1,4 @@
-package turtleprogramming.util;
+package turtleProgramming.util;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;

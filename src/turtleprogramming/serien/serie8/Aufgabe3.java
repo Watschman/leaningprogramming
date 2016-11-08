@@ -1,7 +1,7 @@
-package turtleprogramming.serien.serie8;
+package turtleProgramming.serien.serie8;
 
 import ch.aplu.turtle.Turtle;
-import turtleprogramming.util.FigurHelper;
+import turtleProgramming.util.FigurHelper;
 
 import java.awt.*;
 

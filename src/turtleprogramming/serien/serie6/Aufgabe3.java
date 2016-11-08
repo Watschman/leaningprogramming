@@ -1,7 +1,7 @@
-package turtleprogramming.serien.serie6;
+package turtleProgramming.serien.serie6;
 
 import ch.aplu.turtle.Turtle;
-import turtleprogramming.util.FigurHelper;
+import turtleProgramming.util.FigurHelper;
 
 public class Aufgabe3 {
     Aufgabe3() {

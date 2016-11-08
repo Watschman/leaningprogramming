@@ -1,4 +1,4 @@
-package turtleprogramming.misc.vererbung;
+package turtleProgramming.misc.vererbung;
 
 import ch.aplu.turtle.Turtle;
 

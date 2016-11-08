@@ -1,4 +1,4 @@
-package turtleprogramming.serien.serie1;
+package turtleProgramming.serien.serie1;
 
 import ch.aplu.turtle.Turtle;
 

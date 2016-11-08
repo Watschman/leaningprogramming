@@ -1,4 +1,4 @@
-package turtleprogramming.misc.vorbereitungLK;
+package turtleProgramming.misc.vorbereitungLK;
 
 import ch.aplu.turtle.Turtle;
 

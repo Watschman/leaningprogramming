@@ -1,4 +1,4 @@
-package turtleprogramming.serien.serie11;
+package turtleProgramming.serien.serie11;
 import ch.aplu.turtle.Turtle;
 
 import java.awt.*;

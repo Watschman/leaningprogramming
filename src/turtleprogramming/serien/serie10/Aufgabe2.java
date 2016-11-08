@@ -1,7 +1,7 @@
-package turtleprogramming.serien.serie10;
+package turtleProgramming.serien.serie10;
 
 import ch.aplu.turtle.Turtle;
-import turtleprogramming.util.FigurHelper;
+import turtleProgramming.util.FigurHelper;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
