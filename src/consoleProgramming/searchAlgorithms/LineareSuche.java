@@ -1,14 +1,14 @@
-package consoleProgramming.arrays;
+package consoleProgramming.searchAlgorithms;
 
 import java.util.Scanner;
 
 /**
  * Created by Steve on 16.11.2016.
  */
-public class TaskOne {
+public class LineareSuche {
     Scanner SCANNER = new Scanner(System.in);
     int INTERVAL_MIN, INTERVAL_MAX, AMOUNT, CHECK_INT;
-    private TaskOne(){
+    private LineareSuche(){
         INTERVAL_MIN = getInt("Geben Sie das Minimum des Intervals an.");
         INTERVAL_MAX = getInt("Geben Sie das Maximum des Intervals an.");
         if (INTERVAL_MAX < INTERVAL_MIN) {
@@ -24,11 +24,26 @@ public class TaskOne {
             writeToConsoleLn("Eingegebene Zahl ist außerhalb des Intervals... setze Zahl auf Minimum.");
             CHECK_INT = INTERVAL_MIN;
         }
-        if (checkArray(CHECK_INT, MY_ARRAY))
-            writeToConsoleLn(CHECK_INT + " ist im Feld vorhanden.");
+        if (checkArray(CHECK_INT, MY_ARRAY)){
+            int vorhandenesInt = amountInArray(CHECK_INT, MY_ARRAY);
+            writeToConsoleLn(CHECK_INT + " ist im Feld " + vorhandenesInt + " mal vorhanden.");
+        }
         else
             writeToConsoleLn(CHECK_INT + " ist nicht im Feld vorhanden.");
         result(MY_ARRAY);
+        writeToConsoleLn(" | Ende des Arrays");
+        if (getBoolean("Möchten Sie das Programm erneut ausführen (Antworten mit true / false)"))
+            new LineareSuche();
+    }
+    private boolean getBoolean(Object object){
+        writeToConsoleLn(object);
+        try {
+            return SCANNER.nextBoolean();
+        }catch (Exception ex){
+            writeToConsoleLn("Exception caught during Input: " + ex.getMessage());
+            writeToConsoleLn("returning false...");
+            return false;
+        }
     }
     private boolean checkArray(int checkInt, int[] intArray){
         for (int oneInt : intArray){
@@ -43,6 +58,14 @@ public class TaskOne {
             RETURN_ARRAY[i] = (int)(((max - min) * Math.random()) + min);
         }
         return RETURN_ARRAY;
+    }
+    private int amountInArray(int checkInt, int[] intArray){
+        int returnInt = 0;
+        for (int oneInt : intArray){
+            if (checkInt == oneInt)
+                returnInt++;
+        }
+        return returnInt;
     }
     private int getInt(Object obj){
         try {
@@ -62,5 +85,5 @@ public class TaskOne {
     }
     private void writeToConsoleLn(Object object){System.out.println(object);}
     private void writeToConsole(Object object){System.out.print(object);}
-    public static void main(String[] args){new TaskOne();}
+    public static void main(String[] args){new LineareSuche();}
 }
