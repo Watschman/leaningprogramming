@@ -22,7 +22,8 @@ public class BubbleSort {
         ARRAY_LENGTH = getInt("Geben Sie die Anzahl der Zahlen im Feld an.");
         int[] UNSORTED_ARRAY = createIntArray(MINIMUM, MAXIMUM, ARRAY_LENGTH);
         writeToConsoleLn("Das erstellte Array lautet: " + printArray(UNSORTED_ARRAY));
-        int[] SORTED_ARRAY = createSortedIntArray(UNSORTED_ARRAY);
+        boolean WANTED_CHANGES = getBooleanThroughString("Wollen Sie alle Zwischenschritte des Such Algorithmus sehen? (Antworten mit Ja/true/1 bzw. Nein/false/0)");
+        int[] SORTED_ARRAY = createSortedIntArray(UNSORTED_ARRAY, WANTED_CHANGES);
         writeToConsoleLn("Das sortierte Array lautet: " + printArray(SORTED_ARRAY));
         if (getBooleanThroughString("Möchten Sie das Programm erneut ausführen? (Antworten mit Ja/true/1 bzw. Nein/false/0)"))
             new BubbleSort();
@@ -58,12 +59,14 @@ public class BubbleSort {
             return 0;
         }
     }
-    private int[] createSortedIntArray(int[] oldArray){
+    private int[] createSortedIntArray(int[] oldArray, boolean documentation){
         int backup, k = 1;
         while (k == 1) {
             k = 0;
             for (int i = 0; i < oldArray.length - 1; i++) {
                 if (oldArray[i] > oldArray[i + 1]){
+                    if (documentation)
+                        writeToConsoleLn("Verschiebe " + oldArray[i] + " auf " + i + "-ter Stelle des Array mit " + oldArray[i + 1] + " auf " + (i + 1) + "-ter Stelle des Arrays.");
                     k = 1;
                     backup = oldArray[i];
                     oldArray[i] = oldArray[i + 1];
